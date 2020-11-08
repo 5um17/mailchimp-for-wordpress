@@ -123,6 +123,13 @@ class MC4WP_List_Data_Mapper {
 			}
 		}
 
+		//convert Marketing Permissions
+		if ( ! empty( $this->data['MARKETING_PERMISSIONS'] ) ) {
+			foreach( $this->data['MARKETING_PERMISSIONS'] as $marketing_permission_id) {
+				$subscriber->marketing_permissions[] = ['marketing_permission_id' => $marketing_permission_id,'enabled' => true];
+			}
+		}
+		
 		// find language
 		/* @see http://kb.mailchimp.com/lists/managing-subscribers/view-and-edit-subscriber-languages?utm_source=mc-api&utm_medium=docs&utm_campaign=apidocs&_ga=1.211519638.2083589671.1469697070 */
 		if ( ! empty( $this->data['MC_LANGUAGE'] ) ) {

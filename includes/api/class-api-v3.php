@@ -258,7 +258,9 @@ class MC4WP_API_V3 {
 		if ( isset( $args['interests'] ) ) {
 			$args['interests'] = (object) $args['interests'];
 		}
-
+		if ( isset( $args['marketing_permissions'] ) ) {
+			$args['marketing_permissions'] = (object) $args['marketing_permissions'];
+		}
 		// "put" updates the member if it's already on the list... take notice
 		$data = $this->client->put( $resource, $args );
 		return $data;
@@ -286,7 +288,9 @@ class MC4WP_API_V3 {
 		if ( isset( $args['interests'] ) ) {
 			$args['interests'] = (object) $args['interests'];
 		}
-
+		if ( isset( $args['marketing_permissions'] ) ) {
+			$args['marketing_permissions'] = (object) $args['marketing_permissions'];
+		}
 		$data = $this->client->patch( $resource, $args );
 		return $data;
 	}
